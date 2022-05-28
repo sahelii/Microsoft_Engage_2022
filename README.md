@@ -6,9 +6,12 @@ Implementation of project two: "Develop an application to demonstrate how the Au
 2) Create a virtual environment using conda
 ```conda create --name <env_name>```
 
-3) Install all project dependencies using 
+3)Install pip in conda
+```conda install pip```
+
+4) Install all project dependencies using 
 ```pip install -r requirements.txt```
 
-4) To run the web-app locally
+5) To run the web-app locally
 use 
 ```streamlit run dashboard.py```
