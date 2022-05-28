@@ -102,7 +102,7 @@ if pages=="Data Analysis":
 	def plotMake():
 		st.title("Make analysis")
 		fig = plt.figure(figsize=(25,10))
-		plt.bar(data['Make'].value_counts().keys(),data['Make'].value_counts().values)
+		sn.barplot(data['Make'].value_counts().keys(),data['Make'].value_counts().values)
 		st.pyplot(fig)
 
 
@@ -110,14 +110,13 @@ if pages=="Data Analysis":
 	def plotModel():
 		st.title("Model analysis")
 		fig = plt.figure(figsize=(30,5))
-		plt.bar(data['Model'].value_counts().keys(),data['Model'].value_counts().values)
+		sn.barplot(data['Model'].value_counts().keys(),data['Model'].value_counts().values)
 		plt.xticks(rotation=90)
 		st.pyplot(fig)
 		
 
 	def plotPrice():
 		dict=data['Price'].value_counts(bins=10,sort=False)
-		print(dict.keys(),dict.values)
 		st.title("Price analysis")
 		fig = plt.figure(figsize=(25,10))
 		sn.barplot(dict.index, dict.values, alpha=1)
@@ -126,47 +125,46 @@ if pages=="Data Analysis":
 	def plotARAI_Certified_Mileage():
 		st.title("ARAI_Certified_Mileage analysis")
 		fig = plt.figure(figsize=(25,5))
-		plt.bar(data['ARAI_Certified_Mileage'].value_counts().keys(),data['ARAI_Certified_Mileage'].value_counts().values)
+		sn.barplot(data['ARAI_Certified_Mileage'].value_counts(bins=6,sort=False).index,data['ARAI_Certified_Mileage'].value_counts(bins=6,sort=False).values)
 		st.pyplot(fig)
 
 	def plotSeating_Capacity():
 		st.title("Seating_Capacity Analysis")
 		fig = plt.figure(figsize=(25,5))
-		plt.bar(data['Seating_Capacity'].value_counts().keys(),data['Seating_Capacity'].value_counts().values)
+		sn.barplot(data['Seating_Capacity'].value_counts().keys(),data['Seating_Capacity'].value_counts().values)
 		st.pyplot(fig)
 
 
 	def plotFront_Brakes():
 		st.title("Front_Brakes Analysis")
 		fig = plt.figure(figsize=(25,5))
-		plt.bar(data['Front_Brakes'].value_counts().keys(),data['Front_Brakes'].value_counts().values)
+		plt.pie(data['Front_Brakes'].value_counts().values,labels=['Ventilated Disc','Solid Disc','Drum'])
 		st.pyplot(fig)
 
 
 	def plotFuel_Tank_Capacity():
 		st.title("Fuel_Tank_Capacity Analysis")
 		fig = plt.figure(figsize=(25,5))
-		plt.bar(data['Fuel_Tank_Capacity'].value_counts().keys(),data['Fuel_Tank_Capacity'].value_counts().values)
+		sn.barplot(data['Fuel_Tank_Capacity'].value_counts().keys(),data['Fuel_Tank_Capacity'].value_counts().values)
 		st.pyplot(fig)
 
 	def plotBody_Type():
 		st.title("Body_Type Analysis")
 		fig = plt.figure(figsize=(25,5))
-		plt.bar(data['Body_Type'].value_counts().keys(),data['Body_Type'].value_counts().values)
+		sn.barplot(data['Body_Type'].value_counts().keys(),data['Body_Type'].value_counts().values)
 		st.pyplot(fig)
 
 	def plotChild_Safety_Locks():
 		st.title("Child_Safety_Locks")
 		fig = plt.figure(figsize=(25,5))
-		plt.bar(data['Child_Safety_Locks'].value_counts().keys(),data['Child_Safety_Locks'].value_counts().values)
+		plt.pie(data['Child_Safety_Locks'].value_counts().values,labels=['yes','no'])
 		plt.xticks(rotation=90)
 		st.pyplot(fig)
 
 	def plotBoot_Space():
 		st.title("Boot_Space Analysis")
 		fig = plt.figure(figsize=(25,5))
-		plt.bar(data['Boot_Space'].value_counts().keys(),data['Boot_Space'].value_counts().values)
-		plt.xticks(rotation=90)
+		sn.barplot(data['Boot_Space'].value_counts(bins=6,sort=False).index,data['Boot_Space'].value_counts(bins=6,sort=False).values,alpha=1)
 		st.pyplot(fig)
 
 
@@ -175,15 +173,15 @@ if pages=="Data Analysis":
 	def plotType():
 		st.title("Transmission Type Analysis")
 		fig = plt.figure(figsize=(25,5))
-		plt.bar(data['Type'].value_counts().keys(),data['Type'].value_counts().values)
+		plt.pie(data['Type'].value_counts().values,labels=['Manual','Automatic','DCT','CVT','AMT'])
 		plt.xticks(rotation=90)
 		st.pyplot(fig)
 
 	def plotFuel_Type():
 		st.title("Fuel_Type Analysis")
 		fig = plt.figure(figsize=(25,5))
-		plt.bar(data['Fuel_Type'].value_counts().keys(),data['Fuel_Type'].value_counts().values)
-		plt.xticks(rotation=90)
+		plt.pie(data['Fuel_Type'].value_counts().values,labels=(['Diesel','Petrol','CNG','Electric','CNG+Petrol','Hybrid']))
+		plt.rcParams["font.size"] = "20"
 		st.pyplot(fig)
 
 		
