@@ -3,7 +3,6 @@ argon2-cffi==21.3.0
 argon2-cffi-bindings==21.2.0
 asttokens==2.0.5
 attrs==21.4.0
-autopep8 @ file:///home/conda/feedstock_root/build_artifacts/autopep8_1635267974115/work
 backcall==0.2.0
 beautifulsoup4==4.11.1
 bleach==5.0.0
@@ -63,7 +62,6 @@ protobuf==3.20.1
 psutil==5.9.1
 pure-eval==0.2.2
 pyarrow==8.0.0
-pycodestyle @ file:///home/conda/feedstock_root/build_artifacts/pycodestyle_1633982426610/work
 pycparser==2.21
 pydeck==0.7.1
 Pygments==2.12.0
@@ -92,7 +90,6 @@ tenacity==8.0.1
 terminado==0.15.0
 threadpoolctl==3.1.0
 tinycss2==1.1.1
-toml @ file:///home/conda/feedstock_root/build_artifacts/toml_1604308577558/work
 toolz==0.11.2
 tornado==6.1
 traitlets==5.2.1.post0
