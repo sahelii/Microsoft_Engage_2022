@@ -12,7 +12,7 @@ from sklearn.preprocessing import LabelEncoder
 sn.set()
 
 
-
+# Data ingestion & encoding
 data = pd.read_csv("cleaneddata.csv")
 df=data
 le = LabelEncoder()
@@ -30,7 +30,7 @@ df['Child_Safety_Locks']=label
 	
 st.title("Car Recommendation & Analysis Project")
 container1= st.container()
-
+# Training & output of recommendation engine
 def RE(CSL,P,M,SC,FTC,BS,X):
 	print(P,M,X)
 	test = df[["Price","ARAI_Certified_Mileage","Seating_Capacity","Fuel_Tank_Capacity","Boot_Space","Child_Safety_Locks","Type"]]
@@ -43,7 +43,7 @@ def RE(CSL,P,M,SC,FTC,BS,X):
 	print(res)
 	return res
 			
-
+# REcommendation engine page
 if pages=="Recommendation Engine":
 	container1.subheader("Recommendation Engine")
 	form1=st.form(key = "my_form")
@@ -80,7 +80,7 @@ if pages=="Recommendation Engine":
 	
 	
      
-	
+# Analysis dashboard
 if pages=="Data Analysis":
 	st.sidebar.checkbox("Show analysis by car features", True, key = 1)
 	st.title("Analysis Dashboard")
