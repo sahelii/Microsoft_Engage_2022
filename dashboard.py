@@ -89,7 +89,7 @@ if pages=="Data Analysis":
 	st.sidebar.title("Select Visual Charts")
 	st.sidebar.markdown("Select the Plots accordingly:")
 	selected_status = st.sidebar.selectbox('Car features',
-										options = ['Make',
+										options = ['None','Make',
 													'Model', 'Price',
 													'ARAI_Certified_Mileage','Seating_Capacity',
 													'Front_Brakes', 'Fuel_Tank_Capacity',
